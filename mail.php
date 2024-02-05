@@ -16,19 +16,22 @@
 // Get parameters from url
 $emailReceiver = $_GET["to"];
 $emailSender = $_GET["from"];
+$subject = $_GET["subject"];
+$text = $_GET["txt"];
+
+// Check if mail function exists
+if (!function_exists('mail')) {
+    die('ERROR: mail() function is NOT available.');
+}
 
 // Get sender name
 $emailSendeName = format_name($emailSender);
 
-// Set headers
+// Set email headers
 $headers = "From: ".$emailSendeName." <".$emailSender.">\r\n";
 $headers .= "Reply-To: ".$emailSender."\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-
-// Set email params
-$subject = $_GET["subject"];
-$text = $_GET["txt"];
 
 // Send the email
 $result = mail($emailReceiver,$subject,$text,$headers);
