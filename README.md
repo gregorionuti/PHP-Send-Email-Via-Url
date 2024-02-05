@@ -28,7 +28,7 @@ where
 ---
 
 #### Links
-- :speech_balloon: [Discord server](https://discord.gg/VCtqbgjERH)
+- :speech_balloon: [Discord server](https://discord.gg/B6aqmtq9Az)
 
 ---
 
